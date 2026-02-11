@@ -54,8 +54,11 @@ def add_user():
     else: 
         cursor.execute("INSERT INTO USERS(first_name,last_name,email,password)values(?,?,?,?)",(fname,lname,email,password))
         connection.commit()
+        
         connection.close()
         return render_template('login.html')
 
 if __name__ == '__main__':
     serve(app, host="0.0.0.0", port=8000)
+
+
